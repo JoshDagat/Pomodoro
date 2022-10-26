@@ -1,0 +1,44 @@
+/* Roboto Slab */
+@font-face {
+  font-family: "Roboto Slab";
+  src: url('./../fonts/roboto-slab/static/RobotoSlab-Bold.ttf');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url('./../fonts/roboto-slab/static/RobotoSlab-Light.ttf');
+  font-style: normal;
+  font-weight: light;
+}
+
+/* Kumbh Sans*/
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url('./../fonts/kumbh-sans/static/KumbhSans-Bold.ttf');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url('./../fonts/kumbh-sans/static/KumbhSans-Light.ttf');
+  font-style: normal;
+  font-weight: light;
+}
+
+/* Space Mono */
+@font-face {
+  font-family: "Space Mono";
+  src: url('./../fonts/space-mono/SpaceMono-Bold.ttf');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url('./../fonts/space-mono/SpaceMono-Regular.ttf');
+  font-style: normal;
+  font-weight: normal;
+}
