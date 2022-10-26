@@ -1,11 +1,12 @@
-import "./Nav.scss"
+import "./Nav.scss";
+import NavButton from "../NavButton/NavButton";
 
 const Nav = () => {
   return (
     <div className="Nav">
-      <button id="pomodoro" className="active">pomodoro</button>
-      <button id="short_break">short break</button>
-      <button id="long_break">longbreak</button>
+      <NavButton name="pomodoro" id="pomodoro"></NavButton>
+      <NavButton name="short break" id="short_break"></NavButton>
+      <NavButton name="long break" id="long_break"></NavButton>
     </div>
   )
 }
