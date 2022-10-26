@@ -1,0 +1,24 @@
+@use "../../Assets/styles/variables";
+
+.Nav {
+  background-color: var(--midnight-black-dark);
+  padding: 8px;
+  border-radius: 26.5px;
+
+  button {
+    font-family: "Kumbh Sans", var(--system-ui);
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.125;
+    border: none;
+    background-color: transparent;
+    padding: 19px 26px;
+    border-radius: 26.5px;
+    color: var(--lt-gray);
+  }
+
+  button.active {
+    background-color: var(--red);
+    color: var(--midnight-black);
+  }
+}
