@@ -1,0 +1,15 @@
+:root {
+  --red: #F87070;
+  --cyan: #70f3f8;
+  --purple: #d881f8;
+  --lt-gray: #D7e0ff;
+  --midnight-black: #1e213f;
+  --midnight-black-dark: #161932;
+  --white: #ffffff;
+  --lt-grey: #eff1fa;
+
+  --system-ui:
+    system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
