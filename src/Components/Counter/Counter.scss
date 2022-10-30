@@ -1,0 +1,32 @@
+.timer-wrapper {
+  background: linear-gradient(-45deg, #2e325a, #0e112a);
+  border-radius: 50%;
+  padding: 22px;
+  filter: drop-shadow(-50px -50px 100px #272c5a) drop-shadow(50px 50px 100px #121530);
+}
+
+.timer-wrapper__inner {
+  background-color: #161932;
+  border-radius: 50%;
+}
+
+
+.timer-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-info__remaining {
+  font-size: 100px;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.timer-info__status {
+  letter-spacing: 15px;
+  font-weight: 700;
+  color: white;
+  font-family: 'Kumbh Sans';
+}
