@@ -1,0 +1,68 @@
+.time-input {
+  display: flex;
+  flex-direction: column;
+  max-width: 140px;
+}
+
+.time-input:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+.time-input__ui {
+  position: relative;
+}
+
+.time-input span {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: hsla(235, 35%, 18%, 25%);
+  margin-bottom: 5px;
+}
+
+.time-input input {
+  border: none;
+  background-color: #eff1fa;
+  padding: 15px 16px 19px;
+  border-radius: 10px;
+  max-width: 140px;
+  font-family: "Kumbh Sans";
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.time-input input::-webkit-inner-spin-button,
+.time-input input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.time-input input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.up-arrow,
+.down-arrow {
+  fill: none;
+  stroke: #1e213f;
+  stroke-opacity: 0.25;
+  stroke-width: 2;
+  width: 14px;
+  height: 7px;
+  position: absolute;
+  right: 16px;
+}
+
+.up-arrow:hover,
+.down-arrow:hover {
+  cursor: pointer;
+  stroke-opacity: 0.75;
+}
+
+.up-arrow {
+  top: 16px;
+}
+
+.down-arrow {
+  bottom: 16px;
+}
