@@ -1,5 +1,5 @@
 import "./Nav.scss";
-import NavButton from "../NavButton/NavButton";
+import NavButton from "./NavButton/NavButton";
 
 const Nav = () => {
   return (
