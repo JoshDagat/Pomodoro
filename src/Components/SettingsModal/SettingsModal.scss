@@ -63,3 +63,25 @@
 .settings-color span {
   margin-right: auto;
 }
+
+.settings-modal .apply {
+  max-width: 140px;
+  width: 100%;
+  border-radius: 26.5px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.25;
+  padding: 21px 47px 16px;
+  font-weight: bold;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: -23px;
+  color: #fff;
+}
+
+.settings-modal .apply:hover {
+  cursor: pointer;
+  filter: brightness(95%);
+}

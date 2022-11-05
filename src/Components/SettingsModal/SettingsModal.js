@@ -8,7 +8,8 @@ const SettingsModal = ({
   pomodoro, setPomodoro,
   shortBreak, setShortBreak,
   longBreak, setLongBreak,
-  font, setFont
+  font, setFont,
+  color, setColor
 }) => {
   return (
     <div className='settings-modal'>
@@ -36,12 +37,16 @@ const SettingsModal = ({
         <div className="settings-color">
           <span>Color</span>
           <div className="settings-color__inputs">
-            <ColorInput val={'#F87070'} />
-            <ColorInput val={'#70F3F8'} />
-            <ColorInput val={'#D881F8'} />
+            <ColorInput color={color} setColor={setColor} val={'#F87070'} />
+            <ColorInput color={color} setColor={setColor} val={'#70F3F8'} />
+            <ColorInput color={color} setColor={setColor} val={'#D881F8'} />
           </div>
         </div>
       </div>
+      <button
+        className='apply'
+        style={{ backgroundColor: color }}
+      >Apply</button>
     </div>
   )
 }
