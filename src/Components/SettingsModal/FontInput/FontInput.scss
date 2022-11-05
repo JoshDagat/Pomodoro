@@ -1,0 +1,21 @@
+.font-input {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.font-input:not(:last-of-type) {
+  margin-right: 16px;
+}
+
+.font-input:hover {
+  cursor: pointer;
+}
+
+.font-input.active {
+  background-color: #161932;
+  color: #fff;
+}

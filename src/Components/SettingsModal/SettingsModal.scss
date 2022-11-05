@@ -29,6 +29,26 @@
   padding: 24px 40px;
 }
 
+.settings-time {
+  border-bottom: 1px solid hsla(234, 39%, 14%, 10%);
+  margin-bottom: 24px;
+}
+
 .settings-time__inputs {
   display: flex;
+  margin-bottom: 24px;
+}
+
+.settings-font {
+  display: flex;
+  border-bottom: 1px solid hsla(234, 39%, 14%, 10%);
+  align-items: center;
+}
+
+.settings-font span {
+  margin-right: auto;
+}
+
+.settings-font__inputs {
+  margin-bottom: 24px;
 }

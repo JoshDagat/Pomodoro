@@ -1,10 +1,13 @@
 import './SettingsModal.scss';
 import close from "../../Assets/images/icon-close.svg"
 import TimeInput from './TimeInput/TimeInput';
+import FontInput from './FontInput/FontInput';
 
 const SettingsModal = ({
-  pomodoro, shortBreak, longBreak,
-  setPomodoro, setShortBreak, setLongBreak
+  pomodoro, setPomodoro,
+  shortBreak, setShortBreak,
+  longBreak, setLongBreak,
+  font, setFont
 }) => {
   return (
     <div className='settings-modal'>
@@ -19,6 +22,14 @@ const SettingsModal = ({
             <TimeInput name="pomodoro" val={pomodoro} setVal={setPomodoro} />
             <TimeInput name="short-break" val={shortBreak} setVal={setShortBreak} />
             <TimeInput name="long-break" val={longBreak} setVal={setLongBreak} />
+          </div>
+        </div>
+        <div className="settings-font">
+          <span>Font</span>
+          <div className="settings-font__inputs">
+            <FontInput font={font} val="Kumbh Sans" setFont={setFont} />
+            <FontInput font={font} val="Roboto Slab" setFont={setFont} />
+            <FontInput font={font} val="Space Mono" setFont={setFont} />
           </div>
         </div>
       </div>
