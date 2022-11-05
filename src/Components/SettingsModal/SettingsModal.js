@@ -2,6 +2,7 @@ import './SettingsModal.scss';
 import close from "../../Assets/images/icon-close.svg"
 import TimeInput from './TimeInput/TimeInput';
 import FontInput from './FontInput/FontInput';
+import ColorInput from './ColorInput/ColorInput';
 
 const SettingsModal = ({
   pomodoro, setPomodoro,
@@ -30,6 +31,14 @@ const SettingsModal = ({
             <FontInput font={font} val="Kumbh Sans" setFont={setFont} />
             <FontInput font={font} val="Roboto Slab" setFont={setFont} />
             <FontInput font={font} val="Space Mono" setFont={setFont} />
+          </div>
+        </div>
+        <div className="settings-color">
+          <span>Color</span>
+          <div className="settings-color__inputs">
+            <ColorInput val={'#F87070'} />
+            <ColorInput val={'#70F3F8'} />
+            <ColorInput val={'#D881F8'} />
           </div>
         </div>
       </div>

@@ -43,6 +43,7 @@
   display: flex;
   border-bottom: 1px solid hsla(234, 39%, 14%, 10%);
   align-items: center;
+  margin-bottom: 24px;
 }
 
 .settings-font span {
@@ -51,4 +52,14 @@
 
 .settings-font__inputs {
   margin-bottom: 24px;
+}
+
+.settings-color {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.settings-color span {
+  margin-right: auto;
 }
