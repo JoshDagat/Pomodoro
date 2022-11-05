@@ -1,11 +1,13 @@
 import "./FontInput.scss";
 
-const FontInput = ({ font, val, setFont }) => {
+const FontInput = ({ val, settings, setSettings }) => {
   return (
     <button
-      onClick={() => setFont(val)}
-      className={`font-input ${(val === font) ? 'active' : ''}`}
+      className={`font-input ${(val === settings.font) ? 'active' : ''}`}
       style={{ fontFamily: val }}
+      onClick={
+        () => setSettings(prevSettings => { return { ...prevSettings, font: val } })
+      }
     >
       <span>Aa</span>
     </button>

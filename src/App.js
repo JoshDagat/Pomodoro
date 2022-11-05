@@ -13,10 +13,18 @@ const App = () => {
   const [pomodoro, setPomodoro] = useState(25);
   const [shortBreak, setShortBreak] = useState(5);
   const [longBreak, setLongBreak] = useState(15);
-  const [font, setFont] = useState("Kumbh Sans");
-  const [color, setColor] = useState("#F87070");
 
-  document.getElementById("root").style.fontFamily = font;
+  const [settings, setSettings] = useState({
+    color: '#F87070',
+    font: 'Kumbh Sans'
+  })
+
+  const [appUI, setAppUI] = useState({
+    color: '#F87070',
+    font: 'Kumbh Sans'
+  })
+
+  document.getElementById("root").style.fontFamily = appUI.font;
 
   return (
     <>
@@ -33,10 +41,10 @@ const App = () => {
         setShortBreak={setShortBreak}
         longBreak={longBreak}
         setLongBreak={setLongBreak}
-        font={font}
-        setFont={setFont}
-        color={color}
-        setColor={setColor}
+        settings={settings}
+        setSettings={setSettings}
+        appUI={appUI}
+        setAppUI={setAppUI}
       />
     </>
   )

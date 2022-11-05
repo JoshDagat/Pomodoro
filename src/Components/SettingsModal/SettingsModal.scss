@@ -1,3 +1,14 @@
+// Wrapper
+.settings-modal__wrapper {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: hsla(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .settings-modal {
   background-color: white;
   border-radius: 25px;
@@ -5,6 +16,7 @@
   max-width: 540px;
 }
 
+// Header
 .settings-header {
   padding: 34px 40px;
   border-bottom: 1px solid #E3e1e1;
@@ -25,10 +37,12 @@
   cursor: pointer;
 }
 
+// Body
 .settings-body {
   padding: 24px 40px;
 }
 
+// Body - Time
 .settings-time {
   border-bottom: 1px solid hsla(234, 39%, 14%, 10%);
   margin-bottom: 24px;
@@ -39,6 +53,7 @@
   margin-bottom: 24px;
 }
 
+// Body - Font
 .settings-font {
   display: flex;
   border-bottom: 1px solid hsla(234, 39%, 14%, 10%);
@@ -54,6 +69,7 @@
   margin-bottom: 24px;
 }
 
+// Body - Color
 .settings-color {
   display: flex;
   align-items: center;
@@ -64,6 +80,13 @@
   margin-right: auto;
 }
 
+.settings-color__inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Body - Apply
 .settings-modal .apply {
   max-width: 140px;
   width: 100%;
@@ -79,6 +102,8 @@
   display: block;
   margin-bottom: -23px;
   color: #fff;
+
+  transition: background-color 0.25s ease-in-out;
 }
 
 .settings-modal .apply:hover {

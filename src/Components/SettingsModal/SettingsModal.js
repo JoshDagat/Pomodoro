@@ -8,45 +8,50 @@ const SettingsModal = ({
   pomodoro, setPomodoro,
   shortBreak, setShortBreak,
   longBreak, setLongBreak,
-  font, setFont,
-  color, setColor
+  settings, setSettings,
+  appUI, setAppUI
 }) => {
   return (
-    <div className='settings-modal'>
-      <div className="settings-header">
-        <span>Settings</span>
-        <img src={close} alt="Close" />
+    <div className="settings-modal__wrapper">
+      <div className='settings-modal'>
+        <div className="settings-header">
+          <span>Settings</span>
+          <img src={close} alt="Close" />
+        </div>
+        <div className="settings-body">
+          <div className="settings-time">
+            <span>Time (minutes)</span>
+            <div className="settings-time__inputs">
+              <TimeInput name="pomodoro" val={pomodoro} setVal={setPomodoro} />
+              <TimeInput name="short-break" val={shortBreak} setVal={setShortBreak} />
+              <TimeInput name="long-break" val={longBreak} setVal={setLongBreak} />
+            </div>
+          </div>
+          <div className="settings-font">
+            <span>Font</span>
+            <div className="settings-font__inputs">
+              <FontInput val="Kumbh Sans" settings={settings} setSettings={setSettings} />
+              <FontInput val="Roboto Slab" settings={settings} setSettings={setSettings} />
+              <FontInput val="Space Mono" settings={settings} setSettings={setSettings} />
+            </div>
+          </div>
+          <div className="settings-color">
+            <span>Color</span>
+            <div className="settings-color__inputs">
+              <ColorInput val={'#F87070'} settings={settings} setSettings={setSettings} />
+              <ColorInput val={'#70F3F8'} settings={settings} setSettings={setSettings} />
+              <ColorInput val={'#D881F8'} settings={settings} setSettings={setSettings} />
+            </div>
+          </div>
+        </div>
+        <button
+          className='apply'
+          style={{ backgroundColor: appUI.color }}
+          onClick={
+            () => setAppUI({ font: settings.font, color: settings.color })
+          }
+        >Apply</button>
       </div>
-      <div className="settings-body">
-        <div className="settings-time">
-          <span>Time (minutes)</span>
-          <div className="settings-time__inputs">
-            <TimeInput name="pomodoro" val={pomodoro} setVal={setPomodoro} />
-            <TimeInput name="short-break" val={shortBreak} setVal={setShortBreak} />
-            <TimeInput name="long-break" val={longBreak} setVal={setLongBreak} />
-          </div>
-        </div>
-        <div className="settings-font">
-          <span>Font</span>
-          <div className="settings-font__inputs">
-            <FontInput font={font} val="Kumbh Sans" setFont={setFont} />
-            <FontInput font={font} val="Roboto Slab" setFont={setFont} />
-            <FontInput font={font} val="Space Mono" setFont={setFont} />
-          </div>
-        </div>
-        <div className="settings-color">
-          <span>Color</span>
-          <div className="settings-color__inputs">
-            <ColorInput color={color} setColor={setColor} val={'#F87070'} />
-            <ColorInput color={color} setColor={setColor} val={'#70F3F8'} />
-            <ColorInput color={color} setColor={setColor} val={'#D881F8'} />
-          </div>
-        </div>
-      </div>
-      <button
-        className='apply'
-        style={{ backgroundColor: color }}
-      >Apply</button>
     </div>
   )
 }
