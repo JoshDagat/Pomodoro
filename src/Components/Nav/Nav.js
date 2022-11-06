@@ -1,12 +1,12 @@
 import "./Nav.scss";
 import NavButton from "./NavButton/NavButton";
 
-const Nav = () => {
+const Nav = ({ countdownType, appUI }) => {
   return (
     <div className="Nav">
-      <NavButton name="pomodoro" id="pomodoro"></NavButton>
-      <NavButton name="short break" id="short_break"></NavButton>
-      <NavButton name="long break" id="long_break"></NavButton>
+      <NavButton name="pomodoro" appUI={appUI} countdownType={countdownType}></NavButton>
+      <NavButton name="shortBreak" appUI={appUI} countdownType={countdownType}></NavButton>
+      <NavButton name="longBreak" appUI={appUI} countdownType={countdownType}></NavButton>
     </div>
   )
 }

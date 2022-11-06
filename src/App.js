@@ -10,9 +10,14 @@ import "./App.scss";
 
 const App = () => {
   const [isOpenSettings, setIsOpenSettings] = useState(false);
-  const [pomodoro, setPomodoro] = useState(25);
-  const [shortBreak, setShortBreak] = useState(5);
-  const [longBreak, setLongBreak] = useState(15);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [pomodoro, setPomodoro] = useState(0.1);
+  const [shortBreak, setShortBreak] = useState(0.2);
+  const [longBreak, setLongBreak] = useState(0.3);
+  const [countdownType, setCountdownType] = useState('pomodoro');
+  const [pomodoroCount, setPomodoroCount] = useState(1);
+
+  const [timerKey, setTimerKey] = useState('a0');
 
   const [settings, setSettings] = useState({
     color: '#F87070',
@@ -24,13 +29,40 @@ const App = () => {
     font: 'Kumbh Sans'
   })
 
+  let duration, initialRemainingTime;
+
+  if (countdownType === 'pomodoro') {
+    duration = pomodoro * 60;
+    initialRemainingTime = pomodoro * 60;
+  } else if (countdownType === 'shortBreak') {
+    duration = shortBreak * 60;
+    initialRemainingTime = shortBreak * 60;
+  } else {
+    duration = longBreak * 60;
+    initialRemainingTime = longBreak * 60;
+  }
+
+
   document.getElementById("root").style.fontFamily = appUI.font;
 
   return (
     <>
       <h2>pomodoro</h2>
-      <Nav />
-      <Counter />
+      <Nav
+        countdownType={countdownType}
+        appUI={appUI} />
+      <Counter
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+        countdownType={countdownType}
+        setCountdownType={setCountdownType}
+        pomodoroCount={pomodoroCount}
+        setPomodoroCount={setPomodoroCount}
+        duration={duration}
+        initialRemainingTime={initialRemainingTime}
+        key={timerKey}
+        setKey={setTimerKey}
+      />
       <Settings
         setIsOpenSettings={setIsOpenSettings}
       />

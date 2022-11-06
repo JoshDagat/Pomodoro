@@ -1,8 +1,11 @@
-import React from 'react'
+import "./NavButton.scss"
 
-const NavButton = ({ name, id }) => {
+const NavButton = ({ name, countdownType, appUI }) => {
   return (
-    <button id={id}>{name}</button>
+    <button
+      className={`nav__button`}
+      style={{ backgroundColor: (name === countdownType) ? appUI.color : 'transparent' }}
+    >{name}</button>
   )
 }
 

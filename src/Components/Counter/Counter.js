@@ -2,9 +2,18 @@ import "./Counter.scss";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { useState } from "react";
 
-const Counter = () => {
-  const [duration, setDuration] = useState(600);
-
+const Counter = ({
+  duration,
+  initialRemainingTime,
+  isPlaying,
+  setIsPlaying,
+  countdownType,
+  setCountdownType,
+  pomodoroCount,
+  setPomodoroCount,
+  key,
+  setKey
+}) => {
   const children = ({ remainingTime }) => {
     let minutes = Math.floor(remainingTime / 60);
     let seconds = remainingTime % 60;
@@ -21,7 +30,12 @@ const Counter = () => {
     return (
       <div className="timer-info">
         <span className="timer-info__remaining">{`${minutes}:${seconds}`}</span>
-        <span className="timer-info__status">PAUSE</span>
+        <span
+          className="timer-info__status"
+          onClick={() => setIsPlaying(prevStatus => !prevStatus)}
+        >
+          {(isPlaying) ? 'PAUSE' : 'PLAY'}
+        </span>
       </div>
     );
   }
@@ -30,7 +44,7 @@ const Counter = () => {
     <div className="timer-wrapper">
       <div className="timer-wrapper__inner">
         <CountdownCircleTimer
-          isPlaying
+          isPlaying={isPlaying}
           size={350}
           colors='red'
           trailStrokeWidth={25}
@@ -38,7 +52,28 @@ const Counter = () => {
           strokeLinecap='round'
           rotation='counterclockwise'
           duration={duration}
+          initialRemainingTime={initialRemainingTime}
           children={children}
+          key={key}
+
+          onComplete={
+            () => {
+              if (countdownType === 'pomodoro' && pomodoroCount === 4) {
+                setCountdownType('longBreak');
+                setPomodoroCount(1);
+              }
+              else if (countdownType === 'pomodoro' && pomodoroCount < 4) {
+                setCountdownType('shortBreak');
+                setPomodoroCount(prev => prev + 1);
+              }
+
+              else {
+                setCountdownType('pomodoro');
+              }
+              setKey(prevKey => prevKey[0] + (prevKey.slice(1) + 1))
+              setIsPlaying(false)
+            }
+          }
         >
         </CountdownCircleTimer>
       </div>
