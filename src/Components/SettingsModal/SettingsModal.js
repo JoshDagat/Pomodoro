@@ -9,14 +9,19 @@ const SettingsModal = ({
   shortBreak, setShortBreak,
   longBreak, setLongBreak,
   settings, setSettings,
-  appUI, setAppUI
+  appUI, setAppUI,
+  isOpenSettings, setIsOpenSettings
 }) => {
   return (
-    <div className="settings-modal__wrapper">
+    <div className={`settings-modal__wrapper ${(isOpenSettings) ? 'active' : ''}`}>
       <div className='settings-modal'>
         <div className="settings-header">
           <span>Settings</span>
-          <img src={close} alt="Close" />
+          <img
+            src={close}
+            alt="Close"
+            onClick={() => setIsOpenSettings(prev => !prev)}
+          />
         </div>
         <div className="settings-body">
           <div className="settings-time">

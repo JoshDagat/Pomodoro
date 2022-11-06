@@ -11,9 +11,9 @@ import "./App.scss";
 const App = () => {
   const [isOpenSettings, setIsOpenSettings] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [pomodoro, setPomodoro] = useState(0.1);
-  const [shortBreak, setShortBreak] = useState(0.2);
-  const [longBreak, setLongBreak] = useState(0.3);
+  const [pomodoro, setPomodoro] = useState(25);
+  const [shortBreak, setShortBreak] = useState(5);
+  const [longBreak, setLongBreak] = useState(15);
   const [countdownType, setCountdownType] = useState('pomodoro');
   const [pomodoroCount, setPomodoroCount] = useState(1);
 
@@ -50,7 +50,8 @@ const App = () => {
       <h2>pomodoro</h2>
       <Nav
         countdownType={countdownType}
-        appUI={appUI} />
+        appUI={appUI}
+      />
       <Counter
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
@@ -67,6 +68,8 @@ const App = () => {
         setIsOpenSettings={setIsOpenSettings}
       />
       <SettingsModal
+        isOpenSettings={isOpenSettings}
+        setIsOpenSettings={setIsOpenSettings}
         pomodoro={pomodoro}
         setPomodoro={setPomodoro}
         shortBreak={shortBreak}
