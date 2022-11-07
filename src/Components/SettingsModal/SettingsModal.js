@@ -1,8 +1,8 @@
 import './SettingsModal.scss';
 import close from "../../Assets/images/icon-close.svg"
-import TimeInput from './TimeInput/TimeInput';
-import FontInput from './FontInput/FontInput';
-import ColorInput from './ColorInput/ColorInput';
+import TimeSettings from './TimeSettings/TimeSettings';
+import FontSettings from './FontSettings/FontSettings';
+import ColorSettings from './ColorSettings/ColorSettings';
 
 const SettingsModal = ({
   pomodoro, setPomodoro,
@@ -12,6 +12,25 @@ const SettingsModal = ({
   appUI, setAppUI,
   isOpenSettings, setIsOpenSettings
 }) => {
+
+  const timeValues = [
+    {
+      name: 'pomodoro',
+      time: pomodoro,
+      setTime: setPomodoro
+    },
+    {
+      name: 'short break',
+      time: shortBreak,
+      setTime: setShortBreak
+    },
+    {
+      name: 'long break',
+      time: longBreak,
+      setTime: setLongBreak
+    }
+  ]
+
   return (
     <div className={`settings-modal__wrapper ${(isOpenSettings) ? 'active' : ''}`}>
       <div className='settings-modal'>
@@ -24,30 +43,19 @@ const SettingsModal = ({
           />
         </div>
         <div className="settings-body">
-          <div className="settings-time">
-            <span>Time (minutes)</span>
-            <div className="settings-time__inputs">
-              <TimeInput name="pomodoro" val={pomodoro} setVal={setPomodoro} />
-              <TimeInput name="short-break" val={shortBreak} setVal={setShortBreak} />
-              <TimeInput name="long-break" val={longBreak} setVal={setLongBreak} />
-            </div>
-          </div>
-          <div className="settings-font">
-            <span>Font</span>
-            <div className="settings-font__inputs">
-              <FontInput val="Kumbh Sans" settings={settings} setSettings={setSettings} />
-              <FontInput val="Roboto Slab" settings={settings} setSettings={setSettings} />
-              <FontInput val="Space Mono" settings={settings} setSettings={setSettings} />
-            </div>
-          </div>
-          <div className="settings-color">
-            <span>Color</span>
-            <div className="settings-color__inputs">
-              <ColorInput val={'#F87070'} settings={settings} setSettings={setSettings} />
-              <ColorInput val={'#70F3F8'} settings={settings} setSettings={setSettings} />
-              <ColorInput val={'#D881F8'} settings={settings} setSettings={setSettings} />
-            </div>
-          </div>
+          <TimeSettings
+            values={timeValues}
+          />
+          <FontSettings
+            values={['Kumbh Sans', 'Roboto Slab', 'Space Mono']}
+            settings={settings}
+            setSettings={setSettings}
+          />
+          <ColorSettings
+            values={['#F87070', '#70F3F8', '#D881F8']}
+            settings={settings}
+            setSettings={setSettings}
+          />
         </div>
         <button
           className='apply'
