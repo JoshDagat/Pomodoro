@@ -12,7 +12,8 @@ const Counter = ({
   pomodoroCount,
   setPomodoroCount,
   key,
-  setKey
+  setKey,
+  appUI
 }) => {
   const children = ({ remainingTime }) => {
     let minutes = Math.floor(remainingTime / 60);
@@ -46,7 +47,7 @@ const Counter = ({
         <CountdownCircleTimer
           isPlaying={isPlaying}
           size={350}
-          colors='red'
+          colors={appUI.color}
           trailStrokeWidth={25}
           trailColor='#161932'
           strokeLinecap='round'
@@ -59,11 +60,11 @@ const Counter = ({
           onComplete={
             () => {
               if (countdownType === 'pomodoro' && pomodoroCount === 4) {
-                setCountdownType('longBreak');
+                setCountdownType('long break');
                 setPomodoroCount(1);
               }
               else if (countdownType === 'pomodoro' && pomodoroCount < 4) {
-                setCountdownType('shortBreak');
+                setCountdownType('short break');
                 setPomodoroCount(prev => prev + 1);
               }
 
