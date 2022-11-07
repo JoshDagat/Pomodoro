@@ -1,5 +1,3 @@
-import "./NavButton.scss"
-
 const NavButton = ({ name, countdownType, appUI }) => {
   return (
     <button
