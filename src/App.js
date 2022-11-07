@@ -34,7 +34,7 @@ const App = () => {
   if (countdownType === 'pomodoro') {
     duration = pomodoro * 60;
     initialRemainingTime = pomodoro * 60;
-  } else if (countdownType === 'shortBreak') {
+  } else if (countdownType === 'short break') {
     duration = shortBreak * 60;
     initialRemainingTime = shortBreak * 60;
   } else {
@@ -53,6 +53,7 @@ const App = () => {
         appUI={appUI}
       />
       <Counter
+        appUI={appUI}
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
         countdownType={countdownType}
