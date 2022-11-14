@@ -1,6 +1,5 @@
 import "./Counter.scss";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import { useState } from "react";
 
 const Counter = ({
   duration,
