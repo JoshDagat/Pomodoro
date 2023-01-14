@@ -14,13 +14,24 @@
     line-height: 1.125;
     border: none;
     background-color: transparent;
-    padding: 19px 26px;
+    // padding: 19px 26px;
+    padding: 10px 15px;
     border-radius: 26.5px;
     color: var(--lt-gray);
+  }
+
+  button:hover {
+    cursor: pointer;
   }
 
   button.active {
     background-color: var(--red);
     color: var(--midnight-black);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Nav button {
+    padding: 19px 26px;
   }
 }
