@@ -12,7 +12,8 @@ const Counter = ({
   setPomodoroCount,
   key,
   setKey,
-  appUI
+  appUI,
+  size
 }) => {
   const children = ({ remainingTime }) => {
     let minutes = Math.floor(remainingTime / 60);
@@ -45,7 +46,7 @@ const Counter = ({
       <div className="timer-wrapper__inner">
         <CountdownCircleTimer
           isPlaying={isPlaying}
-          size={350}
+          size={size}
           colors={appUI.color}
           trailStrokeWidth={25}
           trailColor='#161932'

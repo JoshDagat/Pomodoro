@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Nav from "./Components/Nav/Nav";
 import Counter from "./Components/Counter/Counter";
 import Settings from "./Components/Settings/Settings";
@@ -16,6 +16,8 @@ const App = () => {
   const [longBreak, setLongBreak] = useState(15);
   const [countdownType, setCountdownType] = useState('pomodoro');
   const [pomodoroCount, setPomodoroCount] = useState(1);
+  const [counterSize, setCounterSize] = useState(410);
+  const [width] = useWindowSize();
 
   const [timerKey, setTimerKey] = useState('a0');
 
@@ -43,7 +45,34 @@ const App = () => {
   }
 
 
-  document.getElementById("root").style.fontFamily = appUI.font;
+  // document.getElementById("root").style.fontFamily = appUI.font;
+
+  useEffect(() => {
+    document.getElementById("root").style.fontFamily = appUI.font;
+  }, [appUI.font]);
+
+  function useWindowSize() {
+    const [size, setSize] = useState(0);
+    useEffect(() => {
+      function updateSize() {
+        setSize(window.innerWidth)
+      }
+
+      window.addEventListener('resize', updateSize);
+      updateSize();
+      return () => window.removeEventListener('resize', updateSize);
+    }, [])
+
+    return [size];
+  }
+
+  useEffect(() => {
+    if (width >= 768) {
+      setCounterSize(410)
+    } else {
+      setCounterSize(300)
+    }
+  }, [width])
 
   return (
     <>
@@ -64,6 +93,7 @@ const App = () => {
         initialRemainingTime={initialRemainingTime}
         key={timerKey}
         setKey={setTimerKey}
+        size={counterSize}
       />
       <Settings
         setIsOpenSettings={setIsOpenSettings}
