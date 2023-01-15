@@ -1,4 +1,6 @@
 import "./FontInput.scss";
+import blobAudio from "./../../../../Assets/Audio/blob.wav";
+
 
 const FontInput = ({ val, settings, setSettings }) => {
   return (
@@ -6,8 +8,10 @@ const FontInput = ({ val, settings, setSettings }) => {
       className={`font-input ${(val === settings.font) ? 'active' : ''}`}
       style={{ fontFamily: val }}
       onClick={
-        () => setSettings(prevSettings => { return { ...prevSettings, font: val } })
-      }
+        () => {
+          setSettings(prevSettings => { return { ...prevSettings, font: val } })
+          new Audio(blobAudio).play();
+        }}
     >
       <span>Aa</span>
     </button>

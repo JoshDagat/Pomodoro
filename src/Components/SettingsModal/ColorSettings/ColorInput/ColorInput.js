@@ -1,4 +1,6 @@
 import "./ColorInput.scss";
+import blobAudio from "./../../../../Assets/Audio/blob.wav";
+
 
 const ColorInput = ({ val, settings, setSettings }) => {
   return (
@@ -7,7 +9,10 @@ const ColorInput = ({ val, settings, setSettings }) => {
       style={{ backgroundColor: val }}
       onClick={
         () => {
-          setSettings(prevSettings => { return { ...prevSettings, color: val } })
+          {
+            setSettings(prevSettings => { return { ...prevSettings, color: val } })
+            new Audio(blobAudio).play();
+          }
         }
       }
     >
