@@ -1,5 +1,7 @@
 import "./Counter.scss";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import clickAudio from "./../../Assets/Audio/mixkit-select-click-1109.wav";
+import bellAudio from "./../../Assets/Audio/mixkit-notification-bell-592.wav";
 
 const Counter = ({
   duration,
@@ -14,7 +16,6 @@ const Counter = ({
   setKey,
   appUI,
   size,
-  onUpdate
 }) => {
   const children = ({ remainingTime }) => {
     let minutes = Math.floor(remainingTime / 60);
@@ -34,7 +35,10 @@ const Counter = ({
         <span className="timer-info__remaining">{`${minutes}:${seconds}`}</span>
         <span
           className="timer-info__status"
-          onClick={() => setIsPlaying(prevStatus => !prevStatus)}
+          onClick={() => {
+            setIsPlaying(prevStatus => !prevStatus)
+            new Audio(clickAudio).play();
+          }}
         >
           {(isPlaying) ? 'PAUSE' : 'PLAY'}
         </span>
@@ -74,6 +78,7 @@ const Counter = ({
               }
               setKey(prevKey => prevKey[0] + (prevKey.slice(1) + 1))
               setIsPlaying(false)
+              new Audio(bellAudio).play();
             }
           }
         >
