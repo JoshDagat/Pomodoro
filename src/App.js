@@ -94,6 +94,9 @@ const App = () => {
         key={timerKey}
         setKey={setTimerKey}
         size={counterSize}
+        onUpdate={() => {
+          console.log('test')
+        }}
       />
       <Settings
         setIsOpenSettings={setIsOpenSettings}

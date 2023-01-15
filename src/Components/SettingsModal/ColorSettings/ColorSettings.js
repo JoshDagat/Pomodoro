@@ -1,4 +1,5 @@
-import ColorInput from "./ColorInput/ColorInput"
+import ColorInput from "./ColorInput/ColorInput";
+import "./ColorSettings.scss"
 
 const ColorSettings = ({ values, settings, setSettings }) => {
   let colorInputs = values.map(color => {

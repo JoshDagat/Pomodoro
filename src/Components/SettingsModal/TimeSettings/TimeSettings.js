@@ -1,4 +1,5 @@
 import TimeInput from "./TimeInput/TimeInput";
+import "./TimeSettings.scss"
 
 const TimeSettings = ({ values }) => {
   const timeInputs = values.map(({ setTime, time, name }) => {

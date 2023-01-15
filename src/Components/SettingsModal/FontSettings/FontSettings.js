@@ -1,4 +1,5 @@
-import FontInput from "./FontInput/FontInput"
+import FontInput from "./FontInput/FontInput";
+import "./FontSettings.scss"
 
 const FontSettings = ({ values, settings, setSettings }) => {
   const fontInputs = values.map(font => {

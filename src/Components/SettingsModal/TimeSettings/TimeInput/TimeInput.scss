@@ -1,11 +1,6 @@
 .time-input {
   display: flex;
   flex-direction: column;
-  max-width: 140px;
-}
-
-.time-input:not(:last-of-type) {
-  margin-right: 20px;
 }
 
 .time-input__ui {
@@ -25,8 +20,8 @@
   background-color: #eff1fa;
   padding: 15px 16px 19px;
   border-radius: 10px;
-  max-width: 140px;
   font-family: "Kumbh Sans";
+  width: 100%;
   font-weight: bold;
   font-size: 14px;
   line-height: 1.25;

@@ -13,7 +13,8 @@ const Counter = ({
   key,
   setKey,
   appUI,
-  size
+  size,
+  onUpdate
 }) => {
   const children = ({ remainingTime }) => {
     let minutes = Math.floor(remainingTime / 60);
