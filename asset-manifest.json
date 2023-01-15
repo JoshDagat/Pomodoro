@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Pomodoro/static/css/main.93d95248.css",
+    "main.js": "/Pomodoro/static/js/main.f3dba87e.js",
+    "static/media/mixkit-notification-bell-592.wav": "/Pomodoro/static/media/mixkit-notification-bell-592.1cdad05794464c19064d.wav",
+    "static/media/mixkit-select-click-1109.wav": "/Pomodoro/static/media/mixkit-select-click-1109.2604a56c761e9cbfc005.wav",
+    "static/media/RobotoSlab-Bold.ttf": "/Pomodoro/static/media/RobotoSlab-Bold.782c0d76a12a08d80d48.ttf",
+    "static/media/RobotoSlab-Light.ttf": "/Pomodoro/static/media/RobotoSlab-Light.2aad4c868c2732d956d9.ttf",
+    "static/media/SpaceMono-Regular.ttf": "/Pomodoro/static/media/SpaceMono-Regular.8a2aa304d0bd5e41d186.ttf",
+    "static/media/SpaceMono-Bold.ttf": "/Pomodoro/static/media/SpaceMono-Bold.056ac3ebe5f65cb5c4ac.ttf",
+    "static/media/KumbhSans-Bold.ttf": "/Pomodoro/static/media/KumbhSans-Bold.013e56a8c28a095e0195.ttf",
+    "static/media/KumbhSans-Light.ttf": "/Pomodoro/static/media/KumbhSans-Light.621cd5f8b21f464c3b38.ttf",
+    "static/media/blob.wav": "/Pomodoro/static/media/blob.ae2de8e7e136703f3626.wav",
+    "index.html": "/Pomodoro/index.html",
+    "static/media/icon-close.svg": "/Pomodoro/static/media/icon-close.79cfecafebb13ec38327a8a293785c9d.svg",
+    "main.93d95248.css.map": "/Pomodoro/static/css/main.93d95248.css.map",
+    "main.f3dba87e.js.map": "/Pomodoro/static/js/main.f3dba87e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93d95248.css",
+    "static/js/main.f3dba87e.js"
+  ]
+}
