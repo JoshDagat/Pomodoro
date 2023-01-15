@@ -7,7 +7,7 @@ const TimeInput = ({ name, val, setVal }) => {
       <div className="time-input__ui">
         <input id={`time-input__${name}`} type="number" min={1} max={60} value={val} />
         <svg
-          onClick={() => setVal(prev => prev + 1)}
+          onClick={() => setVal(prev => prev === 60 ? prev : prev + 1)}
           className="up-arrow"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -16,7 +16,7 @@ const TimeInput = ({ name, val, setVal }) => {
           />
         </svg>
         <svg
-          onClick={() => setVal(prev => prev - 1)}
+          onClick={() => setVal(prev => prev === 1 ? prev :   prev - 1)}
           className="down-arrow"
           xmlns="http://www.w3.org/2000/svg"
         >
