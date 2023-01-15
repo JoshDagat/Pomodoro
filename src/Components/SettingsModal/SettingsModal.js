@@ -3,6 +3,8 @@ import close from "../../Assets/images/icon-close.svg"
 import TimeSettings from './TimeSettings/TimeSettings';
 import FontSettings from './FontSettings/FontSettings';
 import ColorSettings from './ColorSettings/ColorSettings';
+import blobAudio from "./../../Assets/Audio/blob.wav"
+
 
 const SettingsModal = ({
   pomodoro, setPomodoro,
@@ -61,8 +63,11 @@ const SettingsModal = ({
           className='apply'
           style={{ backgroundColor: appUI.color }}
           onClick={
-            () => setAppUI({ font: settings.font, color: settings.color })
-          }
+            () => {
+              setAppUI({ font: settings.font, color: settings.color })
+              setIsOpenSettings(prevIsOpenSettings => !prevIsOpenSettings)
+              new Audio(blobAudio).play();
+            }}
         >Apply</button>
       </div>
     </div>

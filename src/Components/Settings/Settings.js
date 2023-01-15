@@ -1,9 +1,13 @@
 import "./Settings.scss";
+import blobAudio from "./../../Assets/Audio/blob.wav";
 
 const Settings = ({ setIsOpenSettings }) => {
   return (
     <svg
-      onClick={() => setIsOpenSettings((prevIsOpenSettings) => !prevIsOpenSettings)}
+      onClick={() => {
+        setIsOpenSettings((prevIsOpenSettings) => !prevIsOpenSettings)
+        new Audio(blobAudio).play();
+      }}
       className='settings'
       xmlns="http://www.w3.org/2000/svg"
       width="28"
